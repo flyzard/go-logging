@@ -74,7 +74,12 @@ func (l *Logger) SetLogLevel(level LogLevel) {
 	l.logLevel = level
 }
 
-// Fatal logs informational messages.
+// Fatal logs a fatal message and exits the application.
 func (l *Logger) Fatal(format string, v ...any) {
 	l.logger.Fatal().Msgf(format, v...)
+}
+
+// Debug logs debug messages.
+func (l *Logger) Debug(format string, v ...any) {
+	log.Debug().Msgf(format, v...)
 }
