@@ -73,3 +73,8 @@ func (l *Logger) Error(format string, v ...any) {
 func (l *Logger) SetLogLevel(level LogLevel) {
 	l.logLevel = level
 }
+
+// Fatal logs informational messages.
+func (l *Logger) Fatal(format string, v ...any) {
+	l.logger.Fatal().Msgf(format, v...)
+}
